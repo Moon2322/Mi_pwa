@@ -108,7 +108,7 @@ const Device = ({ onBack }) => {
     try {
       await navigator.clipboard.writeText('¡Texto copiado desde la PWA! 📋');
       alert('✅ Texto copiado al portapapeles');
-    } catch (err) {
+    } catch (error) {
       setError('No se pudo copiar al portapapeles');
     }
   };

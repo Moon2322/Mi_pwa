@@ -79,3 +79,24 @@
     grid-template-columns: 1fr;
   }
 }
+
+
+.card.install-available {
+  background: rgba(76, 175, 80, 0.2);
+  border-color: rgba(76, 175, 80, 0.5);
+}
+
+.card.install-available:hover {
+  background: rgba(76, 175, 80, 0.3);
+  box-shadow: 0 10px 40px rgba(76, 175, 80, 0.4);
+}
+
+.card.install-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.card.install-disabled:hover {
+  transform: none;
+  background: rgba(255, 255, 255, 0.1);
+}

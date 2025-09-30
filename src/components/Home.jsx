@@ -6,7 +6,6 @@ const Home = ({ onNavigate }) => {
   const [puedeInstalar, setPuedeInstalar] = useState(false);
 
   useEffect(() => {
-    // Capturar el evento de instalación
     const handler = (e) => {
       e.preventDefault();
       setDeferredPrompt(e);
@@ -16,7 +15,6 @@ const Home = ({ onNavigate }) => {
 
     window.addEventListener('beforeinstallprompt', handler);
 
-    // Verificar si ya está instalada
     if (window.matchMedia('(display-mode: standalone)').matches) {
       console.log('PWA ya está instalada');
       setPuedeInstalar(false);
@@ -31,10 +29,7 @@ const Home = ({ onNavigate }) => {
       return;
     }
 
-    // Mostrar el prompt de instalación
     deferredPrompt.prompt();
-
-    // Esperar la respuesta del usuario
     const { outcome } = await deferredPrompt.userChoice;
     
     if (outcome === 'accepted') {
@@ -44,7 +39,6 @@ const Home = ({ onNavigate }) => {
       console.log('Usuario rechazó instalar la PWA');
     }
 
-    // Limpiar el prompt
     setDeferredPrompt(null);
     setPuedeInstalar(false);
   };
@@ -54,6 +48,10 @@ const Home = ({ onNavigate }) => {
       <header className="home-header">
         <h1>🚀 Mi PWA</h1>
         <p>Aplicación Web Progresiva</p>
+        <div className="author-info">
+          <p><strong>Aldo Luna</strong></p>
+          <p>UTEQ</p>
+        </div>
       </header>
 
       <div className="home-cards">
@@ -104,6 +102,7 @@ const Home = ({ onNavigate }) => {
 
       <footer className="home-footer">
         <p>PWA con React + Vite</p>
+        <p className="author">Aldo Luna - UTEQ © 2025</p>
       </footer>
     </div>
   );

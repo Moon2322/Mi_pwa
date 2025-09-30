@@ -3,7 +3,6 @@ import './Splash.css';
 
 const Splash = ({ onFinish }) => {
   useEffect(() => {
-    // Después de 2 segundos, oculta el splash
     const timer = setTimeout(() => {
       onFinish();
     }, 2000);
@@ -18,6 +17,10 @@ const Splash = ({ onFinish }) => {
           <h1>🚀</h1>
         </div>
         <h2>Mi PWA</h2>
+        <div className="splash-author">
+          <p>Aldo Luna</p>
+          <p>UTEQ</p>
+        </div>
         <div className="splash-loader">
           <div className="spinner"></div>
         </div>

@@ -57,3 +57,17 @@
   from { opacity: 0; }
   to { opacity: 1; }
 }
+
+.splash-author {
+  margin: 20px 0;
+  padding: 15px 30px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+}
+
+.splash-author p {
+  margin: 5px 0;
+  font-size: 18px;
+  font-weight: 600;
+}
